@@ -13,6 +13,7 @@ var server=express();
 server.listen(8080)
 //1.获取前台请求数据
    //get自带
+server.use(bodyParser.urlencoded());
 server.use(multerObj.any());
 
 //2.cookie session
