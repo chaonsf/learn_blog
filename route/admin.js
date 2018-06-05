@@ -26,7 +26,7 @@ module.exports=function () {
        username=req.body.username;
        password=common.md5(req.body.password+common.MD5_SUFFIX);
 
-       db.query("SELECT * FROM  admin_table WHERE username='${username}'",(err,data)=>{
+       db.query(`SELECT * FROM  admin_table WHERE username="${username}"`,(err,data)=>{
            if(err){
                res.status(500).send("database error").end();
            }else{
